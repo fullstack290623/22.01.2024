@@ -22,6 +22,11 @@ public class Android extends MobilePhone {
     }
 
     @Override
+    public void openApplicationStore() {
+        System.out.println("Connecting to google play to get a new app...");
+    }
+
+    @Override
     public String toString() {
         return "Android{" +
                 "osName='" + osAndroidName + '\'' +

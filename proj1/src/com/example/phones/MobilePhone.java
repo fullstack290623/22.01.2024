@@ -1,6 +1,6 @@
 package com.example.phones;
 
-public class MobilePhone {
+public abstract class MobilePhone {
 
     private float size;
     private String color;
@@ -34,6 +34,13 @@ public class MobilePhone {
         this.size = size;
         this.color = color;
         this.os = os;
+    }
+
+    // contract -- commitment
+    public abstract void openApplicationStore();
+
+    public void openFileSystem() {
+        System.out.println("Opening file system");
     }
 
     @Override

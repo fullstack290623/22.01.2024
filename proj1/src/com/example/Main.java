@@ -1,10 +1,27 @@
 package com.example;
 
+import com.example.phones.Android;
+import com.example.phones.IPhone;
+import com.example.phones.MobilePhone;
 import com.example.shapes.Circle;
 
 public class Main {
 
     public static void main(String[] args) {
+
+
+        // static
+        // static final
+        // final
+        // static field
+        // static method
+        // inheritance -- extends
+        // super - constructor
+        // super -- toString
+        // abstract class
+        // abstract method
+        // override
+        // function parameter of super class
 
         Circle c1 = new Circle(3.5f);
         System.out.println(c1.getRadius());
@@ -34,6 +51,27 @@ public class Main {
         System.out.println(SuperNumber.getMaxNumber()); // biggest
         System.out.println(SuperNumber.getMinNumber()); // smallest
 
+        // cannot new an abstract class
+        // MobilePhone mp = new MobilePhone(6.7f, "white", 15); // Error
+
+        IPhone iphone15 = new IPhone(6.7f, "white", 15, "M2Max");
+        System.out.println(iphone15);
+        iphone15.openApplicationStore();
+
+        Android s24 = new Android(6.9f, "black", 16, "Oreo");
+        s24.openApplicationStore();
+        System.out.println(s24.getOsAndroidName());
+        System.out.println(s24);
+
+        openStore(s24);
+        openStore(iphone15);
+    }
+
+    static void openStore(MobilePhone phone) {
+        phone.openApplicationStore();
+        if (phone instanceof Android) {
+            System.out.println(((Android) phone).getOsAndroidName());
+        }
     }
 
 }
